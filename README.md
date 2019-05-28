@@ -1,6 +1,6 @@
-# SinGAN
+# SinGAN-Pytorch
 
-reimplementation of [SinGAN: Learning a Generative Model from a Single Natural Image
+pytorch reimplementation of [SinGAN: Learning a Generative Model from a Single Natural Image
 ](https://arxiv.org/abs/1905.01164)
 
 still in progress.
@@ -10,4 +10,5 @@ still in progress.
 python train.py
 ```
 
-This will create a Tensorboard file in folder `ckpt/model_name/`.
+This will create a Tensorboard file in folder `ckpt/model_name/`
+with learning curves, random samples, reconstructed samples every iteration.
