@@ -97,6 +97,7 @@ def main():
 
         model_G, model_D = model_module.get_model(model_idx)
 
+        # load prev scale weight if channel num unchanged
         if model_idx not in [0, 4, 8]:
             model_G.load_state_dict(model_G_list[-1].state_dict())
             model_D.load_state_dict(model_D_list[-1].state_dict())
@@ -112,7 +113,7 @@ def main():
 
         for epoch_idx in tqdm(range(num_epoch + num_epoch_decay)):
 
-            # adjust lr
+            # adjust lr after 1600 epoch
             if epoch_idx == num_epoch:
                 for g in optimizer_G.param_groups:
                     g['lr'] = lr_decay
